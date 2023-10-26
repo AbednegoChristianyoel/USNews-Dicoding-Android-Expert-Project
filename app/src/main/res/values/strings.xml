@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">USNews</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="no_data">Empty Data</string>
+    <string name="something_wrong">Oops..Something Went Wrong</string>
+    <string name="image_description">article_image</string>
+    <string name="text_primary">example of title</string>
+    <string name="text_subtitle">example of subtitle</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="btn_web_view">Web View</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+</resources>
