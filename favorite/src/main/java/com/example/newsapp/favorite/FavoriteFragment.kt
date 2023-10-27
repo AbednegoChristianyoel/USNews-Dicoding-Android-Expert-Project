@@ -23,7 +23,7 @@ class FavoriteFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         loadKoinModules(favoriteModule)
         _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
         return binding.root

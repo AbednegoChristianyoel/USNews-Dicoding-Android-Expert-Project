@@ -18,14 +18,14 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
-        app:navGraph="@navigation/main_navigation">
+        android:name="com.example.usnews.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
 
     </androidx.fragment.app.FragmentContainerView>
 

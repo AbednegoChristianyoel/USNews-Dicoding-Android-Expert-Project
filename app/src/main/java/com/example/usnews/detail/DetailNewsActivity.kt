@@ -1,7 +1,5 @@
 package com.example.usnews.detail
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -15,8 +13,6 @@ class DetailNewsActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_DATA = "extra_data"
-        const val EXTRA_VIEW = "extra_view"
-
     }
 
     private val detailNewsViewModel: DetailNewsViewModel by viewModel()
@@ -29,13 +25,6 @@ class DetailNewsActivity : AppCompatActivity() {
 
         val detailNews = intent.getParcelableExtra<News>(EXTRA_DATA)
         showDetailNews(detailNews)
-
-        binding.btnWebView.setOnClickListener {
-            val uri = Uri.parse("newsapp://webview")
-            val intent = Intent(Intent.ACTION_VIEW, uri)
-            intent.putExtra(EXTRA_VIEW, detailNews)
-            startActivity(intent)
-        }
 
     }
 
