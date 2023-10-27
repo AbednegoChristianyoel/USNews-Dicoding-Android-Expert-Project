@@ -3,6 +3,7 @@ package com.example.newsapp.core.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.newsapp.core.R
@@ -16,9 +17,12 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ListViewHolder>() {
 
     fun setData(newListData: List<News>?) {
         if (newListData == null) return
+
+        val diffResult = DiffUtil.calculateDiff(NewsDiffCallback(listData, newListData))
+
         listData.clear()
         listData.addAll(newListData)
-        notifyDataSetChanged()
+        diffResult.dispatchUpdatesTo(this)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
@@ -49,4 +53,13 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ListViewHolder>() {
             }
         }
     }
+    class NewsDiffCallback(private val oldList: List<News>, private val newList: List<News>) : DiffUtil.Callback() {
+        override fun getOldListSize() = oldList.size
+        override fun getNewListSize() = newList.size
+        override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int) =
+            oldList[oldItemPosition].title == newList[newItemPosition].title
+        override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int) =
+            oldList[oldItemPosition] == newList[newItemPosition]
+    }
+
 }
