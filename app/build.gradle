@@ -11,10 +11,6 @@ android {
     namespace 'com.example.usnews'
     compileSdk 34
 
-    lintOptions {
-        baseline file("lint-baseline.xml")
-    }
-
     defaultConfig {
         applicationId "com.example.usnews"
         minSdk 21
