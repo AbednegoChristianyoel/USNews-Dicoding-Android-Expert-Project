@@ -11,6 +11,10 @@ android {
     namespace 'com.example.newsapp.core'
     compileSdk 34
 
+    lintOptions {
+        baseline file("lint-baseline.xml")
+    }
+
     defaultConfig {
         minSdk 21
 

@@ -4,9 +4,14 @@ plugins {
     id 'com.google.devtools.ksp'
 }
 apply from: '../shared_dependencies.gradle'
+
 android {
     namespace 'com.example.newsapp.favorite'
     compileSdk 34
+
+    lintOptions {
+        baseline file("lint-baseline.xml")
+    }
 
     defaultConfig {
         minSdk 21
